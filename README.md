@@ -1,19 +1,8 @@
 # Felix
 
-**TODO: Add description**
+A minimal Plug-based web application.
 
-## Installation
+## Development
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `felix` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [{:felix, "~> 0.1.0"}]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/felix](https://hexdocs.pm/felix).
-
+  * Install dependencies with `mix deps.get`
+  * Start a server with `mix run --no-halt`
