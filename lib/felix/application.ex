@@ -3,16 +3,17 @@ defmodule Felix.Application do
 
   use Application
 
-  alias Felix.{Config, Router}
+  alias Felix.{Router, Waker}
 
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
 
-    port = Config.port(Mix.env)
+    port = Application.get_env(:felix, :port)
     children = [
       Plug.Adapters.Cowboy.child_spec(
         :http, Router, [], [port: port]
-      )
+      ),
+      worker(Waker, []),
     ]
 
     opts = [strategy: :one_for_one, name: Felix.Supervisor]
