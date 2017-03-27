@@ -8,9 +8,10 @@ defmodule Felix.Application do
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
 
+    port = Config.port(Mix.env)
     children = [
       Plug.Adapters.Cowboy.child_spec(
-        :http, Router, [], [port: Config.port]
+        :http, Router, [], [port: port]
       )
     ]
 
