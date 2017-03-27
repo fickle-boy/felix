@@ -4,5 +4,5 @@ defmodule Felix.Config do
   def port(:test),
     do: 4001
   def port(_),
-    do: (System.get_env("PORT") || "4000") |> String.to_integer
+    do: String.to_integer(System.get_env("PORT") || "4000")
 end

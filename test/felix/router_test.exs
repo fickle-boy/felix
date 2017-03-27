@@ -7,7 +7,7 @@ defmodule Felix.RouterTest do
   @opts Router.init([])
 
   test "get /ping" do
-    conn = conn(:get, "/ping") |> Router.call(@opts)
+    conn = :get |> conn("/ping") |> Router.call(@opts)
 
     assert conn.state == :sent
     assert conn.status == 200
@@ -16,7 +16,7 @@ defmodule Felix.RouterTest do
 
   test "get invalid paths" do
     Enum.each ["/", "missing"], fn(path) ->
-      conn = conn(:get, path) |> Router.call(@opts)
+      conn = :get |> conn(path) |> Router.call(@opts)
 
       assert conn.state == :sent
       assert conn.status == 404
