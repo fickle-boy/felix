@@ -35,7 +35,7 @@ defmodule Felix.Waker do
       end
     end
 
-    Process.send_after(self(), :trigger, 20 * 60 * 1_000)
+    Process.send_after(self(), :trigger, 10 * 60 * 1_000)
 
     {:noreply, state + 1}
   end
