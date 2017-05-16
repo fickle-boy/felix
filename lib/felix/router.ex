@@ -17,7 +17,7 @@ defmodule Felix.Router do
     send_resp(conn, 200, count)
   end
 
-  get "/my_info" do
+  get "/my-info" do
     conn
     |> put_resp_content_type("application/json")
     |> send_resp(200, Poison.encode!(Myself.info))
