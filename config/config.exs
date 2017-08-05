@@ -6,6 +6,9 @@ config :felix,
   port: String.to_integer(System.get_env("PORT") || "4000"),
   urls: []
 
+config :slack,
+  api_token: System.get_env("SLACK_API_TOKEN")
+
 import_config "#{Mix.env}.exs"
 
 # This configuration is loaded before any dependency and is restricted

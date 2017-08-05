@@ -36,9 +36,11 @@ defmodule Felix.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:cowboy, "~> 1.1"},
-      {:plug, "~> 1.3"},
-      {:poison, "~> 3.1"},
+      {:cowboy,    "~> 1.1"},
+      {:plug,      "~> 1.3"},
+      {:poison,    "~> 3.1"},
+      {:httpoison, "~> 0.13"},
+      {:slack,     "~> 0.12"},
     ]
   end
 end
