@@ -3,7 +3,7 @@ defmodule Felix.Application do
 
   use Application
 
-  alias Felix.{Router, Waker, OMGPriceReporter}
+  alias Felix.{Router, Waker, BXReporter}
 
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
@@ -14,7 +14,7 @@ defmodule Felix.Application do
         :http, Router, [], [port: port]
       ),
       worker(Waker, []),
-      worker(OMGPriceReporter, []),
+      worker(BXReporter, []),
     ]
 
     opts = [strategy: :one_for_one, name: Felix.Supervisor]
